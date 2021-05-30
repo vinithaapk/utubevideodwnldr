@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Youtube mp4 downloader</title>
+</head>
+<body>
+
+		<style>
+				body
+				{
+					font-family: Arial;
+					margin-top: 150px;
+					margin-left: 60px;
+				}
+				* {
+				  box-sizing: border-box;
+				  }
+				h2
+				{
+					margin-top: 70px;
+					margin-left: 420px;
+					color: green;
+				}
+				form.example input[id = "link"] {
+				  padding: 10px;
+				  font-size: 17px;
+				  border: 1px solid grey;
+				  float: left;
+				  width: 38%;
+				  background: #f1f1f1;
+				  margin-left: 130px;
+				}
+				form.example input[id = "filename"] {
+				  padding: 10px;
+				  font-size: 17px;
+				  border: 1px solid grey;
+				  float: left;
+				  width: 17%;
+				  background: #f1f1f1;
+				}
+				.res{
+
+				  height: 41.4px;
+				  width: 110px;;
+				  background: black;
+				  color: white;
+				  font-size: 17px;
+				  border: 0px solid blue;
+				  border-left: none;
+				  cursor: pointer;
+				}
+				 
+
+				.example button {
+				  height: 41.4px;
+				  width: 110px;
+				  background: black;
+				  color: white;
+				  font-size: 17px;
+				  border: 0px solid red;
+				  border-left: none;
+				  cursor: pointer;
+				  margin-left: -6px;
+				}
+				.example button:hover {
+				  background: red;
+				}
+
+	</style>
+	<div><h2>Youtube Video Downloader</h2></div>
+	<form class="example">
+  		<input type="link" id = "link" placeholder="Paste the video link" name="url" required>
+  		<input type="text" id = "filename" placeholder="Enter the filename" name="filename" required>
+  		<select class ="res" name="res" id="res">
+  			<option value="none" selected hidden>Resolution</option> 
+			<option value="144">144p</option>
+			<option value="240">240p</option>
+			<option value="360">360p</option>
+			<option value="480">480p</option>
+			<option value="720">720p</option>
+			<option value="1080">1080p</option>
+		</select>
+		<button type="submit" value = "Download" onclick="myFunction()">Download</button>
+		{% for message in messages %}
+			<script>
+ 				window.onload = function()
+ 				{ alert('{{message}}') }
+ 			</script>
+		{% endfor %}
+	</form>
+</body>
+</html>
